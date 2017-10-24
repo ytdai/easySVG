@@ -13,6 +13,7 @@
 #' @param stroke.opacity a number, stroke opacity of the rect line, default:1. If the stroke opacity is 0, the line is invisible
 #' @param stroke.dasharray a vector, plot the dotted rect line, eg. c(9, 5)
 #' @return the characher type of svg element
+#' @export
 #' @examples
 #' rect.svg(x = 1, y = 2, width = 10, height = 20, fill = "blue")
 #' rect.svg(x = 1, y = 2, width = 10, height = 20, stroke.dasharray = c(9, 5))

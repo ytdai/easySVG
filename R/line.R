@@ -9,6 +9,7 @@
 #' @param stroke.opacity a number, stroke opacity of the line, default:1. If the stroke opacity is 0, the line is invisible
 #' @param stroke.dasharray a vector, plot the dotted line, eg. c(9, 5)
 #' @return the characher type of svg element
+#' @export
 #' @examples
 #' line.svg(x1 = 1, y1 = 2, x2 = 10, y2 = 20)
 #' line.svg(x1 = 1, y1 = 2, x2 = 10, y2 = 20, stroke.dasharray = c(9, 5))

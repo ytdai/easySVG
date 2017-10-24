@@ -17,6 +17,7 @@
 #' @param rotate a number, rotation angle of text
 #' @param text.path a character, fit text path
 #' @return the characher type of svg element
+#' @export
 #' @examples
 #' text.svg(x = 10, y = 20, content = "Hello Word", fill = "blue")
 #' text.svg(x = 10, y = 20, content = "Hello Word", fill = "blue", rotate = 90, font.family = "Helvetica")
@@ -89,7 +90,7 @@ text.svg <- function(x = NULL,
                           font.style.ele, text.decoration.ele,
                           word.spacing.ele, letter.spacing.ele)
 
-  text.svg <- sprintf('<text x="%s" y="%s" style="%s" %s>%s</text>', x, y, style.element, rotate.ele, content)
+  text.svg.ele <- sprintf('<text x="%s" y="%s" style="%s" %s>%s</text>', x, y, style.element, rotate.ele, content)
 
   if (!is.null(text.path)) {
     text.svg.ele <- sprintf('<text x="%s" y="%s" style="%s" %s><textPath xlink:href="%s">%s</textPath></text>',

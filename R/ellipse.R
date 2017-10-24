@@ -11,6 +11,7 @@
 #' @param stroke.opacity a number, stroke opacity of the ellipse line, default:1. If the stroke opacity is 0, the line is invisible
 #' @param stroke.dasharray a vector, plot the dotted ellipse line, eg. c(9, 5)
 #' @return the characher type of svg element
+#' @export
 #' @examples
 #' ellipse.svg(cx = 10, cy = 20, rx = 10, ry = 5, fill = "blue")
 #' ellipse.svg(cx = 10, cy = 20, rx = 10, ry = 5, fill = "blue", stroke.width = 2)

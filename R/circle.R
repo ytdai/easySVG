@@ -10,6 +10,7 @@
 #' @param stroke.opacity a number, stroke opacity of the circle line, default:1. If the stroke opacity is 0, the line is invisible
 #' @param stroke.dasharray a vector, plot the dotted circle line, eg. c(9, 5)
 #' @return the characher type of svg element
+#' @export
 #' @examples
 #' circle.svg(cx = 10, cy = 20, r = 10, fill = "blue")
 #' circle.svg(cx = 10, cy = 20, r = 10, fill = "blue", stroke.width = 2)

@@ -2,6 +2,7 @@
 #'
 #' @param content a character or a list, group content
 #' @return the characher type of svg element
+#' @export
 #' @examples
 #' defs.svg(content = "this is a svg element")
 #' content <- list(svg1 = "this is a svg element",
