@@ -1,11 +1,12 @@
 Package: easySVG
 Type: Package
-Title: An Easy SVG Element Generator
+Title: An Easy SVG Elements Generator
 Version: 0.1.0
-Author: Dai Yuting
-Maintainer: Dai Yuting <forlynna@sjtu.edu.cn>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: MIT
+Authors@R: person("Yuting", "Dai", email = "forlynna@sjtu.edu.cn", role = c("aut", "cre"))
+Description: easySVG is an easy SVG elements generator. This
+Depends:
+    R (>= 3.3.0)
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.0.1
