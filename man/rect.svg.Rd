@@ -6,7 +6,8 @@
 \usage{
 rect.svg(x = NULL, y = NULL, width = NULL, height = NULL, rx = NULL,
   ry = NULL, fill = "#000000", fill.opacity = 1, stroke = "#000000",
-  stroke.width = 1, stroke.opacity = 1, stroke.dasharray = NULL)
+  stroke.width = 1, stroke.opacity = 1, stroke.dasharray = NULL,
+  style.sheet = NULL)
 }
 \arguments{
 \item{x}{a number, x coordinate information}
@@ -32,6 +33,8 @@ rect.svg(x = NULL, y = NULL, width = NULL, height = NULL, rx = NULL,
 \item{stroke.opacity}{a number, stroke opacity of the rect line, default:1. If the stroke opacity is 0, the line is invisible}
 
 \item{stroke.dasharray}{a vector, plot the dotted rect line, eg. c(9, 5)}
+
+\item{style.sheet}{a vector or a chatacter, other style of the rect, eg. "stroke-linecap: round"}
 }
 \value{
 the characher type of svg element

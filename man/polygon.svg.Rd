@@ -6,7 +6,7 @@
 \usage{
 polygon.svg(points = NULL, fill = "#000000", fill.opacity = 1,
   stroke = "#000000", stroke.width = 1, stroke.opacity = 1,
-  fill.rule = NULL)
+  fill.rule = NULL, style.sheet = NULL)
 }
 \arguments{
 \item{points}{a matrix, a series of coordinates}
@@ -22,6 +22,8 @@ polygon.svg(points = NULL, fill = "#000000", fill.opacity = 1,
 \item{stroke.opacity}{a number, stroke opacity of the polygon line, default:1. If the stroke opacity is 0, the polygon line is invisible}
 
 \item{fill.rule}{a character, fill rule of polygon, eg. "nonzero", "evenodd"}
+
+\item{style.sheet}{a vector or a chatacter, other style of the polygon, eg. "stroke-linecap: round"}
 }
 \value{
 the characher type of svg element

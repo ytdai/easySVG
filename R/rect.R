@@ -12,6 +12,7 @@
 #' @param stroke.width a number, stroke width of the rect line, default: 1
 #' @param stroke.opacity a number, stroke opacity of the rect line, default:1. If the stroke opacity is 0, the line is invisible
 #' @param stroke.dasharray a vector, plot the dotted rect line, eg. c(9, 5)
+#' @param style.sheet a vector or a chatacter, other style of the rect, eg. "stroke-linecap: round"
 #' @return the characher type of svg element
 #' @export
 #' @examples
@@ -31,8 +32,8 @@ rect.svg <- function(x = NULL,
                      stroke = "#000000",
                      stroke.width = 1,
                      stroke.opacity = 1,
-                     stroke.dasharray = NULL
-                     ) {
+                     stroke.dasharray = NULL,
+                     style.sheet = NULL) {
   if (is.null(x) | is.null(y) | is.null(width) | is.null(height)) {
     stop("[ERROR] Basic rect elements are required (x, y, width, height)!")
   }
@@ -49,12 +50,17 @@ rect.svg <- function(x = NULL,
   if (!is.null(stroke.dasharray)) {
     stroke.dasharray <- paste0("stroke-dasharray:", paste(stroke.dasharray, collapse = " "), ";")
   }
+  if (!is.null(style.sheet)) {
+    style.sheet.ele <- paste(style.sheet, collapse = ";")
+  } else {
+    style.sheet.ele <- ""
+  }
   style.element <- paste0("fill:", fill, ";",
                           "fill-opacity:", fill.opacity, ";",
                           "stroke:", stroke, ";",
                           "stroke-width:", stroke.width, ";",
                           "stroke-opacity:", stroke.opacity, ";",
-                          stroke.dasharray)
+                          stroke.dasharray, style.sheet.ele)
 
   rect.svg.ele <- sprintf('<rect x="%s" y="%s" width="%s" height="%s" %s %s style="%s" />', x, y, width, height, rx.ele, ry.ele, style.element)
   return(rect.svg.ele)

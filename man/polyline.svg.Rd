@@ -5,7 +5,7 @@
 \title{Generate polyline SVG element}
 \usage{
 polyline.svg(points = NULL, fill = "none", stroke = "#000000",
-  stroke.width = 1, stroke.opacity = 1)
+  stroke.width = 1, stroke.opacity = 1, style.sheet = NULL)
 }
 \arguments{
 \item{points}{a matrix, a series of coordinates}
@@ -17,6 +17,8 @@ polyline.svg(points = NULL, fill = "none", stroke = "#000000",
 \item{stroke.width}{a number, stroke width of the polyline line, default: 1}
 
 \item{stroke.opacity}{a number, stroke opacity of the polyline line, default:1. If the stroke opacity is 0, the polygon line is invisible}
+
+\item{style.sheet}{a vector or a chatacter, other style of the polyline, eg. "stroke-linecap: round"}
 }
 \value{
 the characher type of svg element

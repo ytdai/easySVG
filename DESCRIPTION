@@ -1,12 +1,13 @@
 Package: easySVG
 Type: Package
-Title: An Easy SVG Elements Generator
+Title: An Easy SVG Basic Elements Generator
 Version: 0.1.0
 Authors@R: person("Yuting", "Dai", email = "forlynna@sjtu.edu.cn", role = c("aut", "cre"))
-Description: easySVG is an easy SVG elements generator. It can easily 
-    generate svg elements such as rect, line, circle, ellipse, polygon 
-    polyline, text and make group. Also, it can add svg header and 
-    output svg.
+Description: This package is an easy SVG elements generator. 
+    It can easily generate svg elements such as rect, 
+    line, circle, ellipse, polygon polyline, text and 
+    make group. Also, it can output svg elements into 
+    a svg file.
 Depends:
     R (>= 3.3.0)
 URL: https://github.com/ytdai/easySVG
@@ -15,4 +16,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
 VignetteBuilder: knitr

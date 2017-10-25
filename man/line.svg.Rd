@@ -6,7 +6,7 @@
 \usage{
 line.svg(x1 = NULL, y1 = NULL, x2 = NULL, y2 = NULL,
   stroke = "#000000", stroke.width = 1, stroke.opacity = 1,
-  stroke.dasharray = NULL)
+  stroke.dasharray = NULL, style.sheet = NULL)
 }
 \arguments{
 \item{x1}{a number, x1 coordinate information}
@@ -24,6 +24,8 @@ line.svg(x1 = NULL, y1 = NULL, x2 = NULL, y2 = NULL,
 \item{stroke.opacity}{a number, stroke opacity of the line, default:1. If the stroke opacity is 0, the line is invisible}
 
 \item{stroke.dasharray}{a vector, plot the dotted line, eg. c(9, 5)}
+
+\item{style.sheet}{a vector or a chatacter, other style of the line, eg. "stroke-linecap: round"}
 }
 \value{
 the characher type of svg element

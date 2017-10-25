@@ -4,12 +4,14 @@
 \alias{group.svg}
 \title{make svg group}
 \usage{
-group.svg(id = NULL, content = NULL)
+group.svg(id = NULL, group.content = NULL, style.sheet = NULL)
 }
 \arguments{
 \item{id}{a character, group id}
 
-\item{content}{a character or a list, group content}
+\item{group.content}{a character or a list or a vector, group content}
+
+\item{style.sheet}{a vector or a chatacter, other style of the group, eg. "stroke-linecap: round"}
 }
 \value{
 the characher type of svg element
@@ -18,9 +20,9 @@ the characher type of svg element
 make svg group
 }
 \examples{
-group.svg(id = "group_1", content = "this is a svg element")
-content <- list(svg1 = "this is a svg element",
-                svg2 = "this is a svg element")
-group.svg(id = "group_1", content = content)
+group.svg(id = "group_1", group.content = "this is a svg element")
+group.content <- list(svg1 = "this is a svg element",
+                      svg2 = "this is a svg element")
+group.svg(id = "group_1", group.content = group.content)
 
 }

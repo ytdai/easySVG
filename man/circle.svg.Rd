@@ -6,7 +6,7 @@
 \usage{
 circle.svg(cx = NULL, cy = NULL, r = NULL, fill = "#000000",
   fill.opacity = 1, stroke = "#000000", stroke.width = 1,
-  stroke.opacity = 1, stroke.dasharray = NULL)
+  stroke.opacity = 1, stroke.dasharray = NULL, style.sheet = NULL)
 }
 \arguments{
 \item{cx}{a number, x coordinate information}
@@ -26,6 +26,8 @@ circle.svg(cx = NULL, cy = NULL, r = NULL, fill = "#000000",
 \item{stroke.opacity}{a number, stroke opacity of the circle line, default:1. If the stroke opacity is 0, the line is invisible}
 
 \item{stroke.dasharray}{a vector, plot the dotted circle line, eg. c(9, 5)}
+
+\item{style.sheet}{a vector or a chatacter, other style of the circle, eg. "stroke-linecap: round"}
 }
 \value{
 the characher type of svg element

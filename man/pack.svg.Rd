@@ -4,15 +4,17 @@
 \alias{pack.svg}
 \title{pack svg}
 \usage{
-pack.svg(width = 1200, height = 800, output = F, output.name = NULL,
-  content = content)
+pack.svg(width = 1200, height = 800, output.svg.name = NULL,
+  pack.content = pack.content)
 }
 \arguments{
 \item{width}{a number, width of the plot}
 
 \item{height}{a number, height of the plot}
 
-\item{content}{a character or a list, group content}
+\item{output.svg.name}{a character, the output svg file name}
+
+\item{pack.content}{a character or a list, group content}
 }
 \value{
 the characher type of svg element
@@ -21,10 +23,11 @@ the characher type of svg element
 pack svg
 }
 \examples{
-pack.svg(content = "<text x=\\"10\\" y=\\"20\\"> this is a svg element </text>")
-content <- list(svg1 = "<text x=\\"10\\" y=\\"20\\"> this is a svg element </text>",
-                svg2 = "<text x=\\"10\\" y=\\"20\\"> this is a svg element </text>")
-pack.svg(content = content)
-pack.svg(content = "<text x=\\"10\\" y=\\"20\\"> this is a svg element </text>", output = T, output.name = "test.svg")
+pack.svg(pack.content = "<text x=\\"10\\" y=\\"20\\"> this is a svg element </text>")
+pack.content <- list(svg1 = "<text x=\\"10\\" y=\\"20\\"> this is a svg element </text>",
+                     svg2 = "<text x=\\"10\\" y=\\"20\\"> this is a svg element </text>")
+pack.svg(pack.content = pack.content)
+pack.svg(pack.content = "<text x=\\"10\\" y=\\"20\\"> this is a svg element </text>",
+         output.svg.name = "test.svg")
 
 }

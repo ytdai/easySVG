@@ -8,6 +8,7 @@
 #' @param stroke.width a number, stroke width of the line, default: 1
 #' @param stroke.opacity a number, stroke opacity of the line, default:1. If the stroke opacity is 0, the line is invisible
 #' @param stroke.dasharray a vector, plot the dotted line, eg. c(9, 5)
+#' @param style.sheet a vector or a chatacter, other style of the line, eg. "stroke-linecap: round"
 #' @return the characher type of svg element
 #' @export
 #' @examples
@@ -23,17 +24,23 @@ line.svg <- function(x1 = NULL,
                      stroke = "#000000",
                      stroke.width = 1,
                      stroke.opacity = 1,
-                     stroke.dasharray = NULL) {
+                     stroke.dasharray = NULL,
+                     style.sheet = NULL) {
   if (is.null(x1) | is.null(y1) | is.null(x2) | is.null(y2)) {
     stop("[ERROR] Basic line elements are required (x1, y1, x2, y2)!")
   }
   if (!is.null(stroke.dasharray)) {
     stroke.dasharray <- paste0("stroke-dasharray:", paste(stroke.dasharray, collapse = ","), ";")
   }
+  if (!is.null(style.sheet)) {
+    style.sheet.ele <- paste(style.sheet, collapse = ";")
+  } else {
+    style.sheet.ele <- ""
+  }
   style.element <- paste0("stroke:", stroke, ";",
                          "stroke-width:", stroke.width, ";",
                          "stroke-opacity:", stroke.opacity, ";",
-                         stroke.dasharray)
+                         stroke.dasharray, style.sheet.ele)
   line.svg.ele <- sprintf('<line x1="%s" y1="%s" x2="%s" y2="%s" style="%s" />', x1, y1, x2, y2, style.element)
   return(line.svg.ele)
 }

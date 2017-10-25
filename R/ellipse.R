@@ -10,6 +10,7 @@
 #' @param stroke.width a number, stroke width of the ellipse line, default: 1
 #' @param stroke.opacity a number, stroke opacity of the ellipse line, default:1. If the stroke opacity is 0, the line is invisible
 #' @param stroke.dasharray a vector, plot the dotted ellipse line, eg. c(9, 5)
+#' @param style.sheet a vector or a chatacter, other style of the ellipse, eg. "stroke-linecap: round"
 #' @return the characher type of svg element
 #' @export
 #' @examples
@@ -26,20 +27,25 @@ ellipse.svg <- function(cx = NULL,
                         stroke = "#000000",
                         stroke.width = 1,
                         stroke.opacity = 1,
-                        stroke.dasharray = NULL
-) {
+                        stroke.dasharray = NULL,
+                        style.sheet = NULL) {
   if (is.null(cx) | is.null(cy) | is.null(rx) | is.null(ry)) {
     stop("[ERROR] Basic ellipse elements are required (cx, cy, rx, ry)!")
   }
   if (!is.null(stroke.dasharray)) {
     stroke.dasharray <- paste0("stroke-dasharray:", paste(stroke.dasharray, collapse = " "), ";")
   }
+  if (!is.null(style.sheet)) {
+    style.sheet.ele <- paste(style.sheet, collapse = ";")
+  } else {
+    style.sheet.ele <- ""
+  }
   style.element <- paste0("fill:", fill, ";",
                           "fill-opacity:", fill.opacity, ";",
                           "stroke:", stroke, ";",
                           "stroke-width:", stroke.width, ";",
                           "stroke-opacity:", stroke.opacity, ";",
-                          stroke.dasharray)
+                          stroke.dasharray, style.sheet.ele)
 
   ellipse.svg.ele <- sprintf('<ellipse cx="%s" cy="%s" rx="%s" ry="%s" style="%s" />', cx, cy, rx, ry, style.element)
   return(ellipse.svg.ele)

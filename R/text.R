@@ -1,8 +1,8 @@
-#' Generate polyline SVG element
+#' Generate text SVG element
 #'
 #' @param x a number, x coordinate information
 #' @param y a number, y corrdinate information
-#' @param ry a number, y coordinate of rounded rectangle
+#' @param text.content a character, text content
 #' @param fill a character, color of the text, eg. "#000000"(default), "red"
 #' @param stroke a characher, color of the rect text, eg. "#000000"(default), "red"
 #' @param stroke.width a number, stroke width of the rect text, default: 1
@@ -16,16 +16,18 @@
 #' @param text.anchor a character, eg. "start"(default), "middle", "end"
 #' @param rotate a number, rotation angle of text
 #' @param text.path a character, fit text path
+#' @param style.sheet a vector or a chatacter, other style of the text, eg. "stroke-linecap: round"
 #' @return the characher type of svg element
 #' @export
 #' @examples
-#' text.svg(x = 10, y = 20, content = "Hello Word", fill = "blue")
-#' text.svg(x = 10, y = 20, content = "Hello Word", fill = "blue", rotate = 90, font.family = "Helvetica")
+#' get.text.svg(x = 10, y = 20, text.content = "Hello Word", fill = "blue")
+#' get.text.svg(x = 10, y = 20, text.content = "Hello Word", fill = "blue",
+#'              rotate = 90, font.family = "Helvetica")
 #'
 
-text.svg <- function(x = NULL,
+get.text.svg <- function(x = NULL,
                      y = NULL,
-                     content = "",
+                     text.content = "",
                      fill = "#000000",
                      stroke = "none",
                      stroke.width = 1,
@@ -38,7 +40,8 @@ text.svg <- function(x = NULL,
                      letter.spacing = "normal",
                      text.anchor = "start",
                      rotate = NULL,
-                     text.path = NULL) {
+                     text.path = NULL,
+                     style.sheet = NULL) {
 
   if (is.null(x) | is.null(y)) {
     stop("[ERROR] Basic text elements are required (x, y)!")
@@ -83,18 +86,25 @@ text.svg <- function(x = NULL,
   } else {
     rotate.ele <- ""
   }
+  if (!is.null(style.sheet)) {
+    style.sheet.ele <- paste(style.sheet, collapse = ";")
+  } else {
+    style.sheet.ele <- ""
+  }
 
   font.family.ele <- paste0("font-family:", font.family, ";")
+  font.size.ele <- paste0("font-size:", font.size, ";")
 
-  style.element <- paste0(font.family.ele, fill.ele, stroke.ele, font.weight.ele,
+  style.element <- paste0(font.family.ele, font.size.ele, fill.ele, stroke.ele, font.weight.ele,
                           font.style.ele, text.decoration.ele,
-                          word.spacing.ele, letter.spacing.ele)
+                          word.spacing.ele, letter.spacing.ele,
+                          style.sheet.ele)
 
-  text.svg.ele <- sprintf('<text x="%s" y="%s" style="%s" %s>%s</text>', x, y, style.element, rotate.ele, content)
+  text.svg.ele <- sprintf('<text x="%s" y="%s" style="%s" %s>%s</text>', x, y, style.element, rotate.ele, text.content)
 
   if (!is.null(text.path)) {
     text.svg.ele <- sprintf('<text x="%s" y="%s" style="%s" %s><textPath xlink:href="%s">%s</textPath></text>',
-                            x, y, style.element, rotate.ele, text.path, content)
+                            x, y, style.element, rotate.ele, text.path, text.content)
   }
 
   return(text.svg.ele)

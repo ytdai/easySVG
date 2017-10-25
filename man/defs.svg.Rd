@@ -4,10 +4,10 @@
 \alias{defs.svg}
 \title{make svg defs}
 \usage{
-defs.svg(content = NULL)
+defs.svg(defs.content = NULL)
 }
 \arguments{
-\item{content}{a character or a list, group content}
+\item{defs.content}{a character or a list, group content}
 }
 \value{
 the characher type of svg element
@@ -16,9 +16,9 @@ the characher type of svg element
 make svg defs
 }
 \examples{
-defs.svg(content = "this is a svg element")
-content <- list(svg1 = "this is a svg element",
-                svg2 = "this is a svg element")
-defs.svg(content = content)
+defs.svg(defs.content = "<text x=\\"10\\" y=\\"20\\"> a svg element </text>")
+defs.content <- list(svg1 = "<text x=\\"10\\" y=\\"30\\"> a svg element </text>",
+                     svg2 = "<text x=\\"10\\" y=\\"40\\"> a svg element </text>")
+defs.svg(defs.content = defs.content)
 
 }
