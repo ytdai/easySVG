@@ -50,7 +50,10 @@ get.text.svg(x = NULL, y = NULL, text.content = "", fill = "#000000",
 the characher type of svg element
 }
 \description{
-Generate text SVG element
+This function can generate a text form SVG element
+The SVG <text> element defines a graphics element consisting of text.
+It's possible to apply a gradient, pattern, clipping path, mask, or
+filter to <text>, just like any other SVG graphics element.
 }
 \examples{
 get.text.svg(x = 10, y = 20, text.content = "Hello Word", fill = "blue")

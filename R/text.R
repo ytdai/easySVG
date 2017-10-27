@@ -1,5 +1,10 @@
 #' Generate text SVG element
 #'
+#' This function can generate a text form SVG element
+#' The SVG <text> element defines a graphics element consisting of text.
+#' It's possible to apply a gradient, pattern, clipping path, mask, or
+#' filter to <text>, just like any other SVG graphics element.
+#'
 #' @param x a number, x coordinate information
 #' @param y a number, y corrdinate information
 #' @param text.content a character, text content

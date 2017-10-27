@@ -24,7 +24,11 @@ polyline.svg(points = NULL, fill = "none", stroke = "#000000",
 the characher type of svg element
 }
 \description{
-Generate polyline SVG element
+This function can generate a polyline form SVG element
+The <polyline> SVG element is an SVG basic shape that creates straight
+lines connecting several points. Typically a polyline is used to create
+open shapes as the last point doesn't have to be connected to the first
+point. For closed shapes see the <polygon> element.
 }
 \examples{
 points <- matrix(c(1,2,3, 11,12,13), nrow = 3, ncol = 2)

@@ -17,7 +17,11 @@ group.svg(id = NULL, group.content = NULL, style.sheet = NULL)
 the characher type of svg element
 }
 \description{
-make svg group
+The <g> SVG element is a container used to group other SVG elements.
+Transformations applied to the <g> element are performed on all of
+its child elements, and any of its attributes are inherited by its
+child elements. It can also group multiple elements to be referenced
+later with the <use> element.
 }
 \examples{
 group.svg(id = "group_1", group.content = "this is a svg element")

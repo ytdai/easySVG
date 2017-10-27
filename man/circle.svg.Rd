@@ -33,7 +33,10 @@ circle.svg(cx = NULL, cy = NULL, r = NULL, fill = "#000000",
 the characher type of svg element
 }
 \description{
-Generate circle SVG element
+This function can generate a circle form SVG element
+}
+\details{
+The <circle> SVG element is an SVG basic shape, used to create circles based on a center point and a radius.
 }
 \examples{
 circle.svg(cx = 10, cy = 20, r = 10, fill = "blue")

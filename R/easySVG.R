@@ -9,6 +9,11 @@
 #'
 #' Report bugs at \url{https://github.com/ytdai/easySVG/issues}
 #'
+#' Scalable Vector Graphics (SVG) is an XML-based vector image format for
+#' two-dimensional graphics with support for interactivity and animation.
+#' The SVG specification is an open standard developed by the World Wide
+#' Web Consortium (W3C) since 1999.
+#'
 #' @examples
 #'
 #' line <- line.svg(x1 = 50, y1 = 20, x2 = 150, y2 = 20)

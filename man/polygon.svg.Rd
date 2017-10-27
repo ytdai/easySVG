@@ -29,7 +29,10 @@ polygon.svg(points = NULL, fill = "#000000", fill.opacity = 1,
 the characher type of svg element
 }
 \description{
-Generate polygon SVG element
+This function can generate a polygon form SVG element
+The <polygon> element defines a closed shape consisting of a set of
+connected straight line segments. The last point is connected to the
+first point. For open shapes see the <polyline> element.
 }
 \examples{
 points <- matrix(c(1,2,3, 11,12,13), nrow = 3, ncol = 2)

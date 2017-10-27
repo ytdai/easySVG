@@ -40,7 +40,10 @@ rect.svg(x = NULL, y = NULL, width = NULL, height = NULL, rx = NULL,
 the characher type of svg element
 }
 \description{
-Generate rectangle SVG element
+This function can generate a rect form SVG element
+The <rect> element is a basic SVG shape that creates rectangles,
+defined by their corner's position, their width, and their height.
+The rectangles may have their corners rounded.
 }
 \examples{
 rect.svg(x = 1, y = 2, width = 10, height = 20, fill = "blue")

@@ -31,7 +31,8 @@ line.svg(x1 = NULL, y1 = NULL, x2 = NULL, y2 = NULL,
 the characher type of svg element
 }
 \description{
-Generate line SVG element
+This function will generate a line form SVG element.
+The <line> element is an SVG basic shape used to create a line connecting two points.
 }
 \examples{
 line.svg(x1 = 1, y1 = 2, x2 = 10, y2 = 20)

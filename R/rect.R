@@ -1,5 +1,10 @@
 #' Generate rectangle SVG element
 #'
+#' This function can generate a rect form SVG element
+#' The <rect> element is a basic SVG shape that creates rectangles,
+#' defined by their corner's position, their width, and their height.
+#' The rectangles may have their corners rounded.
+#'
 #' @param x a number, x coordinate information
 #' @param y a number, y corrdinate information
 #' @param width a number, width of the rect

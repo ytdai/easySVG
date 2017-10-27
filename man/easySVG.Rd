@@ -35,6 +35,11 @@ Useful links:
 \url{https://github.com/ytdai/easySVG}
 
 Report bugs at \url{https://github.com/ytdai/easySVG/issues}
+
+Scalable Vector Graphics (SVG) is an XML-based vector image format for
+two-dimensional graphics with support for interactivity and animation.
+The SVG specification is an open standard developed by the World Wide
+Web Consortium (W3C) since 1999.
 }
 \author{
 Yuting Dai \url{forlynna@sjtu.edu.cn}

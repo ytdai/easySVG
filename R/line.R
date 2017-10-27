@@ -1,5 +1,9 @@
 #' Generate line SVG element
 #'
+#' This function will generate a line form SVG element.
+#' The <line> element is an SVG basic shape used to create a line connecting two points.
+#'
+#'
 #' @param x1 a number, x1 coordinate information
 #' @param y1 a number, y1 corrdinate information
 #' @param x2 a number, x2 corrdiante information

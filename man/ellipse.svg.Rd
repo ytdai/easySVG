@@ -36,7 +36,9 @@ ellipse.svg(cx = NULL, cy = NULL, rx = NULL, ry = NULL,
 the characher type of svg element
 }
 \description{
-Generate ellipse SVG element
+This function can generate a ellipse form of SVG element
+The ellipse element is an SVG basic shape, used to create ellipses
+based on a center coordinate, and both their x and y radius.
 }
 \examples{
 ellipse.svg(cx = 10, cy = 20, rx = 10, ry = 5, fill = "blue")

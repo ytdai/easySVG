@@ -1,5 +1,11 @@
 #' Generate polyline SVG element
 #'
+#' This function can generate a polyline form SVG element
+#' The <polyline> SVG element is an SVG basic shape that creates straight
+#' lines connecting several points. Typically a polyline is used to create
+#' open shapes as the last point doesn't have to be connected to the first
+#' point. For closed shapes see the <polygon> element.
+#'
 #' @param points a matrix, a series of coordinates
 #' @param fill a character, color of the polyline, eg. "#000000"(default), "red"
 #' @param stroke a characher, color of the polyline line, eg. "#000000"(default), "red"

@@ -1,5 +1,9 @@
 #' Generate circle SVG element
 #'
+#' This function can generate a circle form SVG element
+#'
+#' The <circle> SVG element is an SVG basic shape, used to create circles based on a center point and a radius.
+#'
 #' @param cx a number, x coordinate information
 #' @param cy a number, y corrdinate information
 #' @param r a number, radius of the circle

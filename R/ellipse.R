@@ -1,5 +1,9 @@
 #' Generate ellipse SVG element
 #'
+#' This function can generate a ellipse form of SVG element
+#' The ellipse element is an SVG basic shape, used to create ellipses
+#' based on a center coordinate, and both their x and y radius.
+#'
 #' @param cx a number, x coordinate information
 #' @param cy a number, y corrdinate information
 #' @param rx a number, x radius of the ellipse

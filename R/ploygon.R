@@ -1,5 +1,10 @@
 #' Generate polygon SVG element
 #'
+#' This function can generate a polygon form SVG element
+#' The <polygon> element defines a closed shape consisting of a set of
+#' connected straight line segments. The last point is connected to the
+#' first point. For open shapes see the <polyline> element.
+#'
 #' @param points a matrix, a series of coordinates
 #' @param fill a character, color of the polygon, eg. "#000000"(default), "red"
 #' @param fill.opacity a number, stroke opacity of the polygon, default:1. If the fill opacity is 0, the polygon's internal color is invisible

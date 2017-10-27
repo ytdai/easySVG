@@ -56,7 +56,9 @@ pack.svg <- function(width = 1200,
   }
 }
 
-#' link svg
+#' use svg
+#'
+#' The <use> element takes nodes from within the SVG document, and duplicates them somewhere else.
 #'
 #' @param id a character, target of the link
 #' @param x a number, x transform coordinate
@@ -70,11 +72,11 @@ pack.svg <- function(width = 1200,
 #' @return the characher type of svg element
 #' @export
 #' @examples
-#' link.svg(id = "target", x = 100, y = 200)
-#' link.svg(id = "target", x = 100, y = 200, rotate = c(90, 100, 200))
+#' use.svg(id = "target", x = 100, y = 200)
+#' use.svg(id = "target", x = 100, y = 200, rotate = c(90, 100, 200))
 #'
 
-link.svg <- function(id = NULL,
+use.svg <- function(id = NULL,
                      x = NULL,
                      y = NULL,
                      translate = NULL,
@@ -135,8 +137,8 @@ link.svg <- function(id = NULL,
   transform.ele <- paste('transform="', tarnslate.ele, scale.ele,
                          rotate.ele, skewX.ele, skewY.ele, '"')
 
-  link.svg.ele <- sprintf('<use xlink:href="#%s" %s %s %s %s/>', id, x.ele, y.ele, transform.ele, style.sheet.ele)
-  return(link.svg.ele)
+  use.svg.ele <- sprintf('<use xlink:href="#%s" %s %s %s %s/>', id, x.ele, y.ele, transform.ele, style.sheet.ele)
+  return(use.svg.ele)
 
 }
 
