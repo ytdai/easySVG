@@ -104,7 +104,11 @@ use.svg <- function(id = NULL,
     tarnslate.ele <- ""
   }
   if (!is.null(scale)) {
-    scale.ele <- paste0('scale(', scale, ')')
+    if (length(scale.ele) == 1) {
+      scale.ele <- paste0('scale(', scale, ')')
+    } else {
+      scale.ele <- paste0('scale(', scale[1], ',', scale[2], ')')
+    }
   } else {
     scale.ele <- ""
   }
