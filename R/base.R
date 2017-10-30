@@ -104,7 +104,7 @@ use.svg <- function(id = NULL,
     tarnslate.ele <- ""
   }
   if (!is.null(scale)) {
-    if (length(scale.ele) == 1) {
+    if (length(scale) == 1) {
       scale.ele <- paste0('scale(', scale, ')')
     } else {
       scale.ele <- paste0('scale(', scale[1], ',', scale[2], ')')
@@ -138,8 +138,8 @@ use.svg <- function(id = NULL,
     style.sheet.ele <- ""
   }
 
-  transform.ele <- paste('transform="', tarnslate.ele, scale.ele,
-                         rotate.ele, skewX.ele, skewY.ele, '"')
+  transform.ele <- paste('transform="', scale.ele, rotate.ele, 
+                         tarnslate.ele, skewX.ele, skewY.ele, '"')
 
   use.svg.ele <- sprintf('<use xlink:href="#%s" %s %s %s %s/>', id, x.ele, y.ele, transform.ele, style.sheet.ele)
   return(use.svg.ele)
