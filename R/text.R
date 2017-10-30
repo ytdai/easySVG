@@ -99,9 +99,10 @@ get.text.svg <- function(x = NULL,
 
   font.family.ele <- paste0("font-family:", font.family, ";")
   font.size.ele <- paste0("font-size:", font.size, ";")
+  text.anchor.ele <- paste0("text-anchor:", text.anchor, ";")
 
   style.element <- paste0(font.family.ele, font.size.ele, fill.ele, stroke.ele, font.weight.ele,
-                          font.style.ele, text.decoration.ele,
+                          font.style.ele, text.decoration.ele, text.anchor.ele,
                           word.spacing.ele, letter.spacing.ele,
                           style.sheet.ele)
 
