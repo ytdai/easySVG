@@ -16,11 +16,15 @@
 #' group.content <- list(svg1 = "this is a svg element",
 #'                       svg2 = "this is a svg element")
 #' group.svg(id = "group_1", group.content = group.content)
+#' group.svg(id = "group_1", group.content = group.content,
+#'           style.sheet = c("stroke:red", "stroke-width:1"),
+#'           transform.sheet = c("translate(100, 100)"))
 #'
 
 group.svg <- function(id = NULL,
                       group.content = NULL,
-                      style.sheet = NULL) {
+                      style.sheet = NULL,
+                      transform.sheet = NULL) {
   if (!is.null(id)) {
     id.ele <- paste0('id="', id, '"')
   }
@@ -29,13 +33,22 @@ group.svg <- function(id = NULL,
   } else {
     group.content.ele <- ""
   }
+
   if (!is.null(style.sheet)) {
     style.sheet.ele <- paste(style.sheet, collapse = ";")
     style.sheet.ele <- paste0('style="', style.sheet.ele, '"')
   } else {
     style.sheet.ele <- ""
   }
-  group.svg.ele <- sprintf('<g %s %s>\n%s</g>\n', id.ele, style.sheet.ele, group.content.ele)
+
+  if (!is.null(transform.sheet)) {
+    transform.sheet.ele <- paste(transform.sheet, collapse = ";")
+    transform.sheet.ele <- paste0('transform="', transform.sheet.ele, '"')
+  } else {
+    transform.sheet.ele <- ""
+  }
+
+  group.svg.ele <- sprintf('<g %s %s %s>\n%s</g>\n', id.ele, style.sheet.ele, transform.sheet.ele, group.content.ele)
   return(group.svg.ele)
 }
 

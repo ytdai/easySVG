@@ -4,7 +4,8 @@
 \alias{group.svg}
 \title{make svg group}
 \usage{
-group.svg(id = NULL, group.content = NULL, style.sheet = NULL)
+group.svg(id = NULL, group.content = NULL, style.sheet = NULL,
+  transform.sheet = NULL)
 }
 \arguments{
 \item{id}{a character, group id}
@@ -28,5 +29,8 @@ group.svg(id = "group_1", group.content = "this is a svg element")
 group.content <- list(svg1 = "this is a svg element",
                       svg2 = "this is a svg element")
 group.svg(id = "group_1", group.content = group.content)
+group.svg(id = "group_1", group.content = group.content,
+          style.sheet = c("stroke:red", "stroke-width:1"),
+          transform.sheet = c("translate(100, 100)"))
 
 }

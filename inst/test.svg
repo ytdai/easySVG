@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="no"?> 
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> 
+
+<svg width="1200" height="800" version="1.1" 
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<g id="test" transform="translate(100,100)">
+<line x1="0" y1="0" x2="100" y2="0" style="stroke:#000000;stroke-width:1;stroke-opacity:1;" />
+<line x1="0" y1="0" x2="0" y2="-2" style="stroke:#000000;stroke-width:1;stroke-opacity:1;" />
+<line x1="20" y1="0" x2="20" y2="-2" style="stroke:#000000;stroke-width:1;stroke-opacity:1;" />
+<line x1="40" y1="0" x2="40" y2="-2" style="stroke:#000000;stroke-width:1;stroke-opacity:1;" />
+<line x1="60" y1="0" x2="60" y2="-2" style="stroke:#000000;stroke-width:1;stroke-opacity:1;" />
+<line x1="80" y1="0" x2="80" y2="-2" style="stroke:#000000;stroke-width:1;stroke-opacity:1;" />
+<line x1="100" y1="0" x2="100" y2="-2" style="stroke:#000000;stroke-width:1;stroke-opacity:1;" />
+<text x="0" y="11" style="font-family:Arial;font-size:4;text-anchor:middle;" >0</text>
+<text x="20" y="11" style="font-family:Arial;font-size:4;text-anchor:middle;" >4000</text>
+<text x="40" y="11" style="font-family:Arial;font-size:4;text-anchor:middle;" >8000</text>
+<text x="60" y="11" style="font-family:Arial;font-size:4;text-anchor:middle;" >12000</text>
+<text x="80" y="11" style="font-family:Arial;font-size:4;text-anchor:middle;" >16000</text>
+<text x="100" y="11" style="font-family:Arial;font-size:4;text-anchor:middle;" >20000</text></g>
+
+
+</svg>
+
+
