@@ -30,10 +30,9 @@ defs.svg <- function(defs.content = NULL) {
 #' @examples
 #' pack.svg(pack.content = "<text x=\"10\" y=\"20\"> this is a svg element </text>")
 #' pack.content <- list(svg1 = "<text x=\"10\" y=\"20\"> this is a svg element </text>",
-#'                      svg2 = "<text x=\"10\" y=\"20\"> this is a svg element </text>")
-#' pack.svg(pack.content = pack.content)
-#' pack.svg(pack.content = "<text x=\"10\" y=\"20\"> this is a svg element </text>",
-#'          output.svg.name = "test.svg")
+#'                      svg2 = "<text x=\"10\" y=\"40\"> this is a svg element </text>")
+#' pack_info <- pack.svg(pack.content = pack.content)
+#' message(pack_info)
 #'
 
 pack.svg <- function(width = 1200,
@@ -138,7 +137,7 @@ use.svg <- function(id = NULL,
     style.sheet.ele <- ""
   }
 
-  transform.ele <- paste('transform="', scale.ele, rotate.ele, 
+  transform.ele <- paste('transform="', scale.ele, rotate.ele,
                          tarnslate.ele, skewX.ele, skewY.ele, '"')
 
   use.svg.ele <- sprintf('<use xlink:href="#%s" %s %s %s %s/>', id, x.ele, y.ele, transform.ele, style.sheet.ele)

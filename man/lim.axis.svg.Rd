@@ -5,7 +5,8 @@
 \title{Generate SVG element of axis}
 \usage{
 lim.axis.svg(x = NULL, stroke = "#000000", stroke.width = 1,
-  line.length = 100, axis.font.size = 8, id = NULL, unit = NULL)
+  line.length = 100, axis.font.size = 8, digit = 2, span = 5,
+  id = NULL, unit = NULL)
 }
 \arguments{
 \item{x}{a vector, the range of your number}
@@ -26,9 +27,13 @@ This function will generate a axis form SVG element.
 }
 \examples{
 lim.axis.1 <- lim.axis.svg(x = c(100, 900), id = "test")
-pack.svg(pack.content = lim.axis.1, output.svg.name = "inst/test.svg")
+pack_info_1 <- pack.svg(pack.content = lim.axis.1)
+# You can write it in a svg file
+# message(pack_info_1)
 
-lim.axis.2 <- lim.axis.svg(x = c(0, 20000), id = "test", unit = 4000, axis.font.size = 4)
-pack.svg(pack.content = lim.axis.2, output.svg.name = "inst/test.svg")
+lim.axis.2 <- lim.axis.svg(x = c(3.3, 4,5), id = "test", unit = 4000, axis.font.size = 4)
+pack_info_2 <- pack.svg(pack.content = lim.axis.2)
+# You can write it in a svg file
+# message(pack_info_2)
 
 }

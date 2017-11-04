@@ -73,8 +73,8 @@ message(polyline.1)
 ## Text ELement
 
 ``` {r}
-text <- c("line.1", "line.2", "rect.1 - rect.2",
-          "circle.1", "circle.2", "ellipse.1",
+text <- c("line.1", "line.2", "rect.1","rect.2",
+          "circle.1 - circle.2", "ellipse.1",
           "polygon.1", "polyline.1")
 
 text.elements <- lapply(1:length(text), 
