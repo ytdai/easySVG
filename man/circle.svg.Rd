@@ -4,9 +4,8 @@
 \alias{circle.svg}
 \title{Generate circle SVG element}
 \usage{
-circle.svg(cx = NULL, cy = NULL, r = NULL, fill = "#000000",
-  fill.opacity = 1, stroke = "#000000", stroke.width = 1,
-  stroke.opacity = 1, stroke.dasharray = NULL, style.sheet = NULL)
+circle.svg(cx = NULL, cy = NULL, r = NULL, fill, fill.opacity, stroke,
+  stroke.width, stroke.opacity, stroke.dasharray, style.sheet = NULL)
 }
 \arguments{
 \item{cx}{a number, x coordinate information}

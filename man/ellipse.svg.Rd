@@ -4,9 +4,8 @@
 \alias{ellipse.svg}
 \title{Generate ellipse SVG element}
 \usage{
-ellipse.svg(cx = NULL, cy = NULL, rx = NULL, ry = NULL,
-  fill = "#000000", fill.opacity = 1, stroke = "#000000",
-  stroke.width = 1, stroke.opacity = 1, stroke.dasharray = NULL,
+ellipse.svg(cx = NULL, cy = NULL, rx = NULL, ry = NULL, fill,
+  fill.opacity, stroke, stroke.width, stroke.opacity, stroke.dasharray,
   style.sheet = NULL)
 }
 \arguments{

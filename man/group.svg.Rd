@@ -4,7 +4,10 @@
 \alias{group.svg}
 \title{make svg group}
 \usage{
-group.svg(id = NULL, group.content = NULL, style.sheet = NULL,
+group.svg(id = NULL, group.content = NULL, fill, fill.opacity, stroke,
+  stroke.width, stroke.opacity, stroke.dasharray, font.family, font.size,
+  font.weight, font.style, text.decoration, word.spacing, letter.spacing,
+  text.anchor, translate, scale, rotate, skewX, skewY, style.sheet = NULL,
   transform.sheet = NULL)
 }
 \arguments{
@@ -12,7 +15,47 @@ group.svg(id = NULL, group.content = NULL, style.sheet = NULL,
 
 \item{group.content}{a character or a list or a vector, group content}
 
+\item{fill}{a character, color of the group, eg. "#000000"(default), "red"}
+
+\item{fill.opacity}{a number, stroke opacity of the group, default:1. If the fill opacity is 0, the rect's internal color is invisible}
+
+\item{stroke}{a characher, color of the group line, eg. "#000000"(default), "red"}
+
+\item{stroke.width}{a number, stroke width of the group line, default: 1}
+
+\item{stroke.opacity}{a number, stroke opacity of the group line, default:1. If the stroke opacity is 0, the line is invisible}
+
+\item{stroke.dasharray}{a vector, plot the dotted group line, eg. c(9, 5)}
+
+\item{font.family}{a character, font family of text, eg. "Arial"}
+
+\item{font.size}{a number, font size of text, default: 8}
+
+\item{font.weight}{a character, font weight of text, eg. "normal"(default), "bold"}
+
+\item{font.style}{a character, font style of text, eg. "normal"(default), "italic"}
+
+\item{text.decoration}{a character, text decoration, eg. "none"(default), "underline", "overline", "line-through"}
+
+\item{word.spacing}{a number or character, default: "normal"}
+
+\item{letter.spacing}{a number or character, defailt: "normal"}
+
+\item{text.anchor}{a character, eg. "start"(default), "middle", "end"}
+
+\item{translate}{a vector, translate of the object}
+
+\item{scale}{a number. transform scale of the object}
+
+\item{rotate}{a vector, rotation of the object}
+
+\item{skewX}{a number}
+
+\item{skewY}{a number}
+
 \item{style.sheet}{a vector or a chatacter, other style of the group, eg. "stroke-linecap: round"}
+
+\item{transform.sheet}{a vector or a chatacter, other transform of the group}
 }
 \value{
 the characher type of svg element

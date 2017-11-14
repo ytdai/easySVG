@@ -11,7 +11,7 @@
 #' @param fill a character, color of the text, eg. "#000000"(default), "red"
 #' @param stroke a characher, color of the rect text, eg. "#000000"(default), "red"
 #' @param stroke.width a number, stroke width of the rect text, default: 1
-#' @param font.family a character, font family of text, default: "Arial"
+#' @param font.family a character, font family of text, eg. "Arial"
 #' @param font.size a number, font size of text, default: 8
 #' @param font.weight a character, font weight of text, eg. "normal"(default), "bold"
 #' @param font.style a character, font style of text, eg. "normal"(default), "italic"
@@ -33,84 +33,79 @@
 get.text.svg <- function(x = NULL,
                      y = NULL,
                      text.content = "",
-                     fill = "#000000",
-                     stroke = "none",
-                     stroke.width = 1,
-                     font.family = "Arial",
-                     font.size = 8,
-                     font.weight = "normal",
-                     font.style = "normal",
-                     text.decoration = "none",
-                     word.spacing = "normal",
-                     letter.spacing = "normal",
-                     text.anchor = "start",
-                     rotate = NULL,
-                     text.path = NULL,
+                     fill,
+                     stroke,
+                     stroke.width,
+                     font.family,
+                     font.size,
+                     font.weight,
+                     font.style,
+                     text.decoration,
+                     word.spacing,
+                     letter.spacing,
+                     text.anchor,
+                     rotate,
+                     text.path,
                      style.sheet = NULL) {
 
   if (is.null(x) | is.null(y)) {
     stop("[ERROR] Basic text elements are required (x, y)!")
-  }
-  if (fill != "#000000") {
-    fill.ele <- paste0("fill:", fill, ";")
-  } else {
-    fill.ele = ""
-  }
-  if (stroke != "none") {
-    stroke.ele <- paste0("stroke:", stroke, ";", "stroke-width:", stroke.width, ";")
-  } else {
-    stroke.ele = ""
-  }
-  if (font.weight != "normal") {
-    font.weight.ele <- paste0("font-weight", font.weight, ";")
-  } else {
-    font.weight.ele = ""
-  }
-  if (font.style != "normal") {
-    font.style.ele <- paste0("font-style:", font.style, ";")
-  } else {
-    font.style.ele <- ""
-  }
-  if (text.decoration != "none") {
-    text.decoration.ele <- paste0("text-decoration:", text.decoration, ";")
-  } else {
-    text.decoration.ele<- ""
-  }
-  if (word.spacing != "normal") {
-    word.spacing.ele <- paste0("word-spacing:", word.spacing, ";")
-  } else {
-    word.spacing.ele <- ""
-  }
-  if (letter.spacing != "normal") {
-    letter.spacing.ele <- paste0("letter-spacing:", letter.spacing, ";")
-  } else {
-    letter.spacing.ele <- ""
-  }
-  if (!is.null(rotate)) {
-    rotate.ele <- paste0('transform="rotate(', rotate, ',', x, ',', y, ')"')
-  } else {
-    rotate.ele <- ""
   }
   if (!is.null(style.sheet)) {
     style.sheet.ele <- paste(style.sheet, collapse = ";")
   } else {
     style.sheet.ele <- ""
   }
+  if (!missing(fill)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "fill:", fill, ";")
+  }
+  if (!missing(stroke)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke:", stroke, ";")
+  }
+  if (!missing(stroke.width)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke-width:", stroke.width, ";")
+  }
+  if (!missing(font.family)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "font-family:", font.family, ";")
+  }
+  if (!missing(font.size)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "font-size:", font.size, ";")
+  }
+  if (!missing(font.weight)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "font-weight:", font.weight, ";")
+  }
+  if (!missing(font.style)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "font-style:", font.style, ";")
+  }
+  if (!missing(text.decoration)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "text-decoration:", text.decoration, ";")
+  }
+  if (!missing(word.spacing)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "word-spacing:", word.spacing, ";")
+  }
+  if (!missing(letter.spacing)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "letter-spacing:", letter.spacing, ";")
+  }
+  if (!missing(text.anchor)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "text-anchor:", text.anchor, ";")
+  }
+  if (style.sheet.ele != "") {
+    style.sheet.ele <- paste0('style="', style.sheet.ele, '"')
+  }
 
-  font.family.ele <- paste0("font-family:", font.family, ";")
-  font.size.ele <- paste0("font-size:", font.size, ";")
-  text.anchor.ele <- paste0("text-anchor:", text.anchor, ";")
+  transform.ele <- ""
+  if (!missing(rotate)) {
+    transform.ele <- paste0(transform.ele, 'rotate(', rotate, ',', x, ',', y, ');')
+  }
+  if (transform.ele != "") {
+    transform.ele <- paste0('transform="', transform.ele, '"')
+  }
 
-  style.element <- paste0(font.family.ele, font.size.ele, fill.ele, stroke.ele, font.weight.ele,
-                          font.style.ele, text.decoration.ele, text.anchor.ele,
-                          word.spacing.ele, letter.spacing.ele,
-                          style.sheet.ele)
+  text.svg.ele <- sprintf('<text x="%s" y="%s" %s %s>%s</text>', x, y, style.sheet.ele, transform.ele, text.content)
 
-  text.svg.ele <- sprintf('<text x="%s" y="%s" style="%s" %s>%s</text>', x, y, style.element, rotate.ele, text.content)
-
-  if (!is.null(text.path)) {
-    text.svg.ele <- sprintf('<text x="%s" y="%s" style="%s" %s><textPath xlink:href="%s">%s</textPath></text>',
-                            x, y, style.element, rotate.ele, text.path, text.content)
+  if (!missing(text.path)) {
+    text.svg.ele <- sprintf('<text x="%s" y="%s" %s %s><textPath xlink:href="%s">%s</textPath></text>',
+                            x, y,  style.sheet.ele, transform.ele, text.path, text.content)
   }
 
   return(text.svg.ele)

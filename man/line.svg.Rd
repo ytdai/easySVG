@@ -4,9 +4,8 @@
 \alias{line.svg}
 \title{Generate line SVG element}
 \usage{
-line.svg(x1 = NULL, y1 = NULL, x2 = NULL, y2 = NULL,
-  stroke = "#000000", stroke.width = 1, stroke.opacity = 1,
-  stroke.dasharray = NULL, style.sheet = NULL)
+line.svg(x1 = NULL, y1 = NULL, x2 = NULL, y2 = NULL, stroke,
+  stroke.width, stroke.opacity, stroke.dasharray, style.sheet = NULL)
 }
 \arguments{
 \item{x1}{a number, x1 coordinate information}
@@ -36,6 +35,7 @@ The <line> element is an SVG basic shape used to create a line connecting two po
 }
 \examples{
 line.svg(x1 = 1, y1 = 2, x2 = 10, y2 = 20)
+line.svg(x1 = 1, y1 = 2, x2 = 10, y2 = 20, stroke = "#00FF00")
 line.svg(x1 = 1, y1 = 2, x2 = 10, y2 = 20, stroke.dasharray = c(9, 5))
 
 

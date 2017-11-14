@@ -4,12 +4,10 @@
 \alias{get.text.svg}
 \title{Generate text SVG element}
 \usage{
-get.text.svg(x = NULL, y = NULL, text.content = "", fill = "#000000",
-  stroke = "none", stroke.width = 1, font.family = "Arial",
-  font.size = 8, font.weight = "normal", font.style = "normal",
-  text.decoration = "none", word.spacing = "normal",
-  letter.spacing = "normal", text.anchor = "start", rotate = NULL,
-  text.path = NULL, style.sheet = NULL)
+get.text.svg(x = NULL, y = NULL, text.content = "", fill, stroke,
+  stroke.width, font.family, font.size, font.weight, font.style,
+  text.decoration, word.spacing, letter.spacing, text.anchor, rotate, text.path,
+  style.sheet = NULL)
 }
 \arguments{
 \item{x}{a number, x coordinate information}
@@ -24,7 +22,7 @@ get.text.svg(x = NULL, y = NULL, text.content = "", fill = "#000000",
 
 \item{stroke.width}{a number, stroke width of the rect text, default: 1}
 
-\item{font.family}{a character, font family of text, default: "Arial"}
+\item{font.family}{a character, font family of text, eg. "Arial"}
 
 \item{font.size}{a number, font size of text, default: 8}
 

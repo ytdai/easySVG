@@ -22,12 +22,12 @@
 #'
 #'
 polygon.svg <- function(points = NULL,
-                        fill = "#000000",
-                        fill.opacity = 1,
-                        stroke = "#000000",
-                        stroke.width = 1,
-                        stroke.opacity = 1,
-                        fill.rule = NULL,
+                        fill,
+                        fill.opacity,
+                        stroke,
+                        stroke.width,
+                        stroke.opacity,
+                        fill.rule,
                         style.sheet = NULL) {
   if (is.null(points)) {
     stop("[ERROR] Basic line elements are required (points)!")
@@ -36,26 +36,36 @@ polygon.svg <- function(points = NULL,
       points <- as.matrix(points)
     }
   }
-  if (!is.null(fill.rule)) {
-    fill.rule.ele <- paste0("fill-rule:", fill.rule, ";")
-  } else {
-    fill.rule.ele <- ""
-  }
   if (!is.null(style.sheet)) {
     style.sheet.ele <- paste(style.sheet, collapse = ";")
   } else {
     style.sheet.ele <- ""
   }
+  if (!missing(fill)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "fill:", fill, ";")
+  }
+  if (!missing(fill.opacity)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "fill-opacity:", fill.opacity, ";")
+  }
+  if (!missing(stroke)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke:", stroke, ";")
+  }
+  if (!missing(stroke.width)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke-width:", stroke.width, ";")
+  }
+  if (!missing(stroke.opacity)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke-opacity:", stroke.opacity, ";")
+  }
+  if (!missing(fill.rule)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "fill-rule", fill.rule, ";")
+  }
+  if (style.sheet.ele != "") {
+    style.sheet.ele <- paste0('style="', style.sheet.ele, '"')
+  }
 
   points.ele <- lapply(1:nrow(points), function(x) { paste(points[x, 1], points[x, 2], sep = ",") })
   points.ele <- paste(points.ele, collapse = " ")
-  style.element <- paste0(fill.rule.ele,
-                          "fill:", fill, ";",
-                          "fill-opacity:", fill.opacity, ";",
-                          "stroke:", stroke, ";",
-                          "stroke-width:", stroke.width, ";",
-                          "stroke-opacity:", stroke.opacity, ";",
-                          style.sheet.ele)
-  polygon.svg.ele <- sprintf('<polygon points="%s" style="%s" />', points.ele, style.element)
+
+  polygon.svg.ele <- sprintf('<polygon points="%s" %s />', points.ele, style.sheet.ele)
   return(polygon.svg.ele)
 }

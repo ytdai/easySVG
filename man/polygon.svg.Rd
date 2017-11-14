@@ -4,9 +4,8 @@
 \alias{polygon.svg}
 \title{Generate polygon SVG element}
 \usage{
-polygon.svg(points = NULL, fill = "#000000", fill.opacity = 1,
-  stroke = "#000000", stroke.width = 1, stroke.opacity = 1,
-  fill.rule = NULL, style.sheet = NULL)
+polygon.svg(points = NULL, fill, fill.opacity, stroke, stroke.width,
+  stroke.opacity, fill.rule, style.sheet = NULL)
 }
 \arguments{
 \item{points}{a matrix, a series of coordinates}

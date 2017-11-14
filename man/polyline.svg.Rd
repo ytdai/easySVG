@@ -4,8 +4,8 @@
 \alias{polyline.svg}
 \title{Generate polyline SVG element}
 \usage{
-polyline.svg(points = NULL, fill = "none", stroke = "#000000",
-  stroke.width = 1, stroke.opacity = 1, style.sheet = NULL)
+polyline.svg(points = NULL, fill, stroke, stroke.width, stroke.opacity,
+  style.sheet = NULL)
 }
 \arguments{
 \item{points}{a matrix, a series of coordinates}

@@ -21,10 +21,10 @@
 #'
 #'
 polyline.svg <- function(points = NULL,
-                         fill = "none",
-                         stroke = "#000000",
-                         stroke.width = 1,
-                         stroke.opacity = 1,
+                         fill,
+                         stroke,
+                         stroke.width,
+                         stroke.opacity,
                          style.sheet = NULL) {
   if (is.null(points)) {
     stop("[ERROR] Basic line elements are required (points)!")
@@ -38,14 +38,25 @@ polyline.svg <- function(points = NULL,
   } else {
     style.sheet.ele <- ""
   }
+  if (!missing(fill)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "fill:", fill, ";")
+  }
+  if (!missing(stroke)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke:", stroke, ";")
+  }
+  if (!missing(stroke.width)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke-width:", stroke.width, ";")
+  }
+  if (!missing(stroke.opacity)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke-opacity:", stroke.opacity, ";")
+  }
+  if (style.sheet.ele != "") {
+    style.sheet.ele <- paste0('style="', style.sheet.ele, '"')
+  }
 
   points.ele <- lapply(1:nrow(points), function(x) { paste(points[x, 1], points[x, 2], sep = " ") })
   points.ele <- paste(points.ele, collapse = " , ")
-  style.element <- paste0("fill:", fill, ";",
-                          "stroke:", stroke, ";",
-                          "stroke-width:", stroke.width, ";",
-                          "stroke-opacity:", stroke.opacity, ";",
-                          style.sheet.ele)
-  polyline.svg.ele <- sprintf('<polyline points="%s" style="%s" />', points.ele, style.element)
+
+  polyline.svg.ele <- sprintf('<polyline points="%s" %s />', points.ele, style.sheet.ele)
   return(polyline.svg.ele)
 }

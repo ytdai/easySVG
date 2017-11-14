@@ -4,8 +4,8 @@
 \alias{use.svg}
 \title{use svg}
 \usage{
-use.svg(id = NULL, x = NULL, y = NULL, translate = NULL, scale = NULL,
-  rotate = NULL, skewX = NULL, skewY = NULL, style.sheet = NULL)
+use.svg(id = NULL, x = NULL, y = NULL, translate, scale, rotate, skewX,
+  skewY, style.sheet = NULL, transform.sheet = NULL)
 }
 \arguments{
 \item{id}{a character, target of the link}

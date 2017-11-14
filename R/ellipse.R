@@ -26,32 +26,44 @@ ellipse.svg <- function(cx = NULL,
                         cy = NULL,
                         rx = NULL,
                         ry = NULL,
-                        fill = "#000000",
-                        fill.opacity = 1,
-                        stroke = "#000000",
-                        stroke.width = 1,
-                        stroke.opacity = 1,
-                        stroke.dasharray = NULL,
+                        fill,
+                        fill.opacity,
+                        stroke,
+                        stroke.width,
+                        stroke.opacity,
+                        stroke.dasharray,
                         style.sheet = NULL) {
   if (is.null(cx) | is.null(cy) | is.null(rx) | is.null(ry)) {
     stop("[ERROR] Basic ellipse elements are required (cx, cy, rx, ry)!")
-  }
-  if (!is.null(stroke.dasharray)) {
-    stroke.dasharray <- paste0("stroke-dasharray:", paste(stroke.dasharray, collapse = " "), ";")
   }
   if (!is.null(style.sheet)) {
     style.sheet.ele <- paste(style.sheet, collapse = ";")
   } else {
     style.sheet.ele <- ""
   }
-  style.element <- paste0("fill:", fill, ";",
-                          "fill-opacity:", fill.opacity, ";",
-                          "stroke:", stroke, ";",
-                          "stroke-width:", stroke.width, ";",
-                          "stroke-opacity:", stroke.opacity, ";",
-                          stroke.dasharray, style.sheet.ele)
+  if (!missing(fill)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "fill:", fill, ";")
+  }
+  if (!missing(fill.opacity)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "fill-opacity:", fill.opacity, ";")
+  }
+  if (!missing(stroke)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke:", stroke, ";")
+  }
+  if (!missing(stroke.width)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke-width:", stroke.width, ";")
+  }
+  if (!missing(stroke.opacity)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke-opacity:", stroke.opacity, ";")
+  }
+  if (!missing(stroke.dasharray)) {
+    style.sheet.ele <- paste0(style.sheet.ele, "stroke-dasharray:", paste(stroke.dasharray, collapse = " "), ";")
+  }
+  if (style.sheet.ele != "") {
+    style.sheet.ele <- paste0('style="', style.sheet.ele, '"')
+  }
 
-  ellipse.svg.ele <- sprintf('<ellipse cx="%s" cy="%s" rx="%s" ry="%s" style="%s" />', cx, cy, rx, ry, style.element)
+  ellipse.svg.ele <- sprintf('<ellipse cx="%s" cy="%s" rx="%s" ry="%s" %s />', cx, cy, rx, ry, style.sheet.ele)
   return(ellipse.svg.ele)
 }
 

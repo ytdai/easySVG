@@ -42,6 +42,10 @@ pack.svg <- function(width = 1200,
   if (is.list(pack.content)) {
     pack.content <- unlist(pack.content)
     pack.content <- paste(pack.content, collapse = "\n")
+  } else if (is.vector(pack.content)) {
+    pack.content <- paste(pack.content, collapse = "\n")
+  } else {
+    pack.content <- paste(pack.content, sep = "\n")
   }
   svg_header <- sprintf("<?xml version=\"1.0\" standalone=\"no\"?> \n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \n  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"> \n\n<svg width=\"%s\" height=\"%s\" version=\"1.1\" \n  xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n", width, height)
   svg_footer <- sprintf("\n</svg>")
@@ -76,14 +80,15 @@ pack.svg <- function(width = 1200,
 #'
 
 use.svg <- function(id = NULL,
-                     x = NULL,
-                     y = NULL,
-                     translate = NULL,
-                     scale = NULL,
-                     rotate = NULL,
-                     skewX = NULL,
-                     skewY = NULL,
-                     style.sheet = NULL) {
+                    x = NULL,
+                    y = NULL,
+                    translate,
+                    scale,
+                    rotate,
+                    skewX,
+                    skewY,
+                    style.sheet = NULL,
+                    transform.sheet = NULL) {
   if (is.null(id)) {
     stop("[ERROR] target object id is reuqired!")
   }
@@ -97,48 +102,47 @@ use.svg <- function(id = NULL,
   } else {
     y.ele <- ""
   }
-  if (!is.null(translate)) {
-    tarnslate.ele <- paste0('translate(', translate[1], ',', translate[2], ')')
+
+  if (!is.null(style.sheet)) {
+    style.sheet.ele <- paste(style.sheet, collapse = ";")
   } else {
-    tarnslate.ele <- ""
+    style.sheet.ele <- ""
   }
-  if (!is.null(scale)) {
+
+  if (!is.null(transform.sheet)) {
+    transform.ele <- paste(transform.sheet, collapse = ";")
+  } else {
+    transform.ele <- ""
+  }
+  if (!missing(translate)) {
+    transform.ele <- paste0(transform.ele, 'translate(', translate[1], ',', translate[2], ')', ";")
+  }
+  if (!missing(scale)) {
     if (length(scale) == 1) {
       scale.ele <- paste0('scale(', scale, ')')
     } else {
       scale.ele <- paste0('scale(', scale[1], ',', scale[2], ')')
     }
-  } else {
-    scale.ele <- ""
+    transform.ele <- paste0(transform.ele, scale.ele, ";")
   }
-  if (!is.null(rotate)) {
+  if (!missing(rotate)) {
     if (length(rotate) < 1) {
       rotate.ele <- paste0('rotate(', rotate[1], ')')
     } else {
       rotate.ele <- paste0('rotate(', rotate[1], ',', rotate[2], ',', rotate[3], ')')
     }
-  } else {
-    rotate.ele <- ""
+    transform.ele <- paste0(transform.ele, rotate.ele, ";")
   }
-  if (!is.null(skewX)) {
-    skewX.ele <- paste0('skewX(', skewX, ')')
-  } else {
-    skewX.ele <- ""
+  if (!missing(skewX)) {
+    transform.ele <- paste0(transform.ele, 'skewX(', skewX, ')', ";")
   }
-  if (!is.null(skewY)) {
-    skewY.ele <- paste0('skewY(', skewY, ')')
-  } else {
-    skewY.ele <- ""
+  if (!missing(skewY)) {
+    transform.ele <- paste0(transform.ele, 'skewX(', skewY, ')', ";")
   }
-  if (!is.null(style.sheet)) {
-    style.sheet.ele <- paste(style.sheet, collapse = ";")
-    style.sheet.ele <- paste0('style="', style.sheet.ele, '"')
-  } else {
-    style.sheet.ele <- ""
+  if (transform.ele != "") {
+    transform.ele <- paste0('transform="', transform.ele, '"')
   }
 
-  transform.ele <- paste('transform="', scale.ele, rotate.ele,
-                         tarnslate.ele, skewX.ele, skewY.ele, '"')
 
   use.svg.ele <- sprintf('<use xlink:href="#%s" %s %s %s %s/>', id, x.ele, y.ele, transform.ele, style.sheet.ele)
   return(use.svg.ele)

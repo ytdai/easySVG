@@ -5,9 +5,8 @@
 \title{Generate rectangle SVG element}
 \usage{
 rect.svg(x = NULL, y = NULL, width = NULL, height = NULL, rx = NULL,
-  ry = NULL, fill = "#000000", fill.opacity = 1, stroke = "#000000",
-  stroke.width = 1, stroke.opacity = 1, stroke.dasharray = NULL,
-  style.sheet = NULL)
+  ry = NULL, fill, fill.opacity, stroke, stroke.width, stroke.opacity,
+  stroke.dasharray, style.sheet = NULL)
 }
 \arguments{
 \item{x}{a number, x coordinate information}
