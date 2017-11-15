@@ -4,7 +4,7 @@
 \alias{use.svg}
 \title{use svg}
 \usage{
-use.svg(id = NULL, x = NULL, y = NULL, translate, scale, rotate, skewX,
+use.svg(id = NULL, x = NULL, y = NULL, scale, rotate, translate, skewX,
   skewY, style.sheet = NULL, transform.sheet = NULL)
 }
 \arguments{
@@ -14,11 +14,11 @@ use.svg(id = NULL, x = NULL, y = NULL, translate, scale, rotate, skewX,
 
 \item{y}{a number, y transform coordinate}
 
-\item{translate}{a vector, translate of the object}
-
 \item{scale}{a number. transform scale of the object}
 
 \item{rotate}{a vector, rotation of the object}
+
+\item{translate}{a vector, translate of the object}
 
 \item{skewX}{a number}
 

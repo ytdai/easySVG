@@ -7,7 +7,7 @@
 group.svg(id = NULL, group.content = NULL, fill, fill.opacity, stroke,
   stroke.width, stroke.opacity, stroke.dasharray, font.family, font.size,
   font.weight, font.style, text.decoration, word.spacing, letter.spacing,
-  text.anchor, translate, scale, rotate, skewX, skewY, style.sheet = NULL,
+  text.anchor, scale, rotate, translate, skewX, skewY, style.sheet = NULL,
   transform.sheet = NULL)
 }
 \arguments{
@@ -43,11 +43,11 @@ group.svg(id = NULL, group.content = NULL, fill, fill.opacity, stroke,
 
 \item{text.anchor}{a character, eg. "start"(default), "middle", "end"}
 
-\item{translate}{a vector, translate of the object}
-
 \item{scale}{a number. transform scale of the object}
 
 \item{rotate}{a vector, rotation of the object}
+
+\item{translate}{a vector, translate of the object}
 
 \item{skewX}{a number}
 

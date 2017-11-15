@@ -95,7 +95,7 @@ get.text.svg <- function(x = NULL,
 
   transform.ele <- ""
   if (!missing(rotate)) {
-    transform.ele <- paste0(transform.ele, 'rotate(', rotate, ',', x, ',', y, ');')
+    transform.ele <- paste0(transform.ele, 'rotate(', rotate, ',', x, ',', y, ') ')
   }
   if (transform.ele != "") {
     transform.ele <- paste0('transform="', transform.ele, '"')

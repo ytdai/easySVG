@@ -22,9 +22,9 @@
 #' @param word.spacing a number or character, default: "normal"
 #' @param letter.spacing a number or character, defailt: "normal"
 #' @param text.anchor a character, eg. "start"(default), "middle", "end"
-#' @param translate a vector, translate of the object
 #' @param scale a number. transform scale of the object
 #' @param rotate a vector, rotation of the object
+#' @param translate a vector, translate of the object
 #' @param skewX a number
 #' @param skewY a number
 #' @param style.sheet a vector or a chatacter, other style of the group, eg. "stroke-linecap: round"
@@ -57,9 +57,11 @@ group.svg <- function(id = NULL,
                       word.spacing,
                       letter.spacing,
                       text.anchor,
-                      translate,
+
                       scale,
                       rotate,
+                      translate,
+
                       skewX,
                       skewY,
                       style.sheet = NULL,
@@ -134,12 +136,9 @@ group.svg <- function(id = NULL,
 
 
   if (!is.null(transform.sheet)) {
-    transform.ele <- paste(transform.sheet, collapse = ";")
+    transform.ele <- paste(transform.sheet, collapse = " ")
   } else {
     transform.ele <- ""
-  }
-  if (!missing(translate)) {
-    transform.ele <- paste0(transform.ele, 'translate(', translate[1], ',', translate[2], ')', ";")
   }
   if (!missing(scale)) {
     if (length(scale) == 1) {
@@ -147,7 +146,7 @@ group.svg <- function(id = NULL,
     } else {
       scale.ele <- paste0('scale(', scale[1], ',', scale[2], ')')
     }
-    transform.ele <- paste0(transform.ele, scale.ele, ";")
+    transform.ele <- paste0(transform.ele, scale.ele, " ")
   }
   if (!missing(rotate)) {
     if (length(rotate) < 1) {
@@ -155,13 +154,16 @@ group.svg <- function(id = NULL,
     } else {
       rotate.ele <- paste0('rotate(', rotate[1], ',', rotate[2], ',', rotate[3], ')')
     }
-    transform.ele <- paste0(transform.ele, rotate.ele, ";")
+    transform.ele <- paste0(transform.ele, rotate.ele, " ")
+  }
+  if (!missing(translate)) {
+    transform.ele <- paste0(transform.ele, 'translate(', translate[1], ',', translate[2], ')', " ")
   }
   if (!missing(skewX)) {
-    transform.ele <- paste0(transform.ele, 'skewX(', skewX, ')', ";")
+    transform.ele <- paste0(transform.ele, 'skewX(', skewX, ')', " ")
   }
   if (!missing(skewY)) {
-    transform.ele <- paste0(transform.ele, 'skewX(', skewY, ')', ";")
+    transform.ele <- paste0(transform.ele, 'skewX(', skewY, ')', " ")
   }
   if (transform.ele != "") {
     transform.ele <- paste0('transform="', transform.ele, '"')
