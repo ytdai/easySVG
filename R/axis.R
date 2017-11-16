@@ -5,8 +5,12 @@
 #' @param x a vector, the range of your number
 #' @param stroke a number, the line stroke of the axis
 #' @param stroke.width a number, the line stroke of the axis
-#' @param length a number, the line length of the axis
+#' @param line.length a number, the line length of the axis
 #' @param axis.font.size a number, the axis font size of axis
+#' @param digit a number, the significant digits number of axis
+#' @param span a number, distance between number and axis line
+#' @param id a character, the id name of this axis
+#' @param unit the unit of this axis
 #' @return the characher type of svg element
 #' @export
 #' @examples

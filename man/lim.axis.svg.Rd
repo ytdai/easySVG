@@ -15,9 +15,17 @@ lim.axis.svg(x = NULL, stroke = "#000000", stroke.width = 1,
 
 \item{stroke.width}{a number, the line stroke of the axis}
 
+\item{line.length}{a number, the line length of the axis}
+
 \item{axis.font.size}{a number, the axis font size of axis}
 
-\item{length}{a number, the line length of the axis}
+\item{digit}{a number, the significant digits number of axis}
+
+\item{span}{a number, distance between number and axis line}
+
+\item{id}{a character, the id name of this axis}
+
+\item{unit}{the unit of this axis}
 }
 \value{
 the characher type of svg element

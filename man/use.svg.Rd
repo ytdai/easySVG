@@ -25,6 +25,8 @@ use.svg(id = NULL, x = NULL, y = NULL, scale, rotate, translate, skewX,
 \item{skewY}{a number}
 
 \item{style.sheet}{a vector or a chatacter, other style of the link, eg. "stroke-linecap: round"}
+
+\item{transform.sheet}{a vector or a chatacter, other transform of the link,}
 }
 \value{
 the characher type of svg element

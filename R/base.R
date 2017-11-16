@@ -72,6 +72,7 @@ pack.svg <- function(width = 1200,
 #' @param skewX a number
 #' @param skewY a number
 #' @param style.sheet a vector or a chatacter, other style of the link, eg. "stroke-linecap: round"
+#' @param transform.sheet a vector or a chatacter, other transform of the link,
 #' @return the characher type of svg element
 #' @export
 #' @examples
