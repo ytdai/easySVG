@@ -32,7 +32,7 @@ ellipse.svg(cx = NULL, cy = NULL, rx = NULL, ry = NULL, fill,
 \item{style.sheet}{a vector or a chatacter, other style of the ellipse, eg. "stroke-linecap: round"}
 }
 \value{
-the characher type of svg element
+the characher type of SVG element
 }
 \description{
 This function can generate a ellipse form of SVG element

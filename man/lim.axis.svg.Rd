@@ -28,7 +28,7 @@ lim.axis.svg(x = NULL, stroke = "#000000", stroke.width = 1,
 \item{unit}{the unit of this axis}
 }
 \value{
-the characher type of svg element
+the characher type of SVG element
 }
 \description{
 This function will generate a axis form SVG element.
@@ -41,7 +41,7 @@ pack_info_1 <- pack.svg(pack.content = lim.axis.1)
 
 lim.axis.2 <- lim.axis.svg(x = c(3.3, 4,5), id = "test", unit = 4000, axis.font.size = 4)
 pack_info_2 <- pack.svg(pack.content = lim.axis.2)
-# You can write it in a svg file
+# You can write it in a SVG file
 # message(pack_info_2)
 
 }

@@ -1,12 +1,12 @@
-#' make svg defs
+#' make SVG defs element
 #'
 #' @param defs.content a character or a list, group content
-#' @return the characher type of svg element
+#' @return the characher type of SVG element
 #' @export
 #' @examples
-#' defs.svg(defs.content = "<text x=\"10\" y=\"20\"> a svg element </text>")
-#' defs.content <- list(svg1 = "<text x=\"10\" y=\"30\"> a svg element </text>",
-#'                      svg2 = "<text x=\"10\" y=\"40\"> a svg element </text>")
+#' defs.svg(defs.content = "<text x=\"10\" y=\"20\"> an SVG element </text>")
+#' defs.content <- list(svg1 = "<text x=\"10\" y=\"30\"> an SVG element </text>",
+#'                      svg2 = "<text x=\"10\" y=\"40\"> an SVG element </text>")
 #' defs.svg(defs.content = defs.content)
 #'
 

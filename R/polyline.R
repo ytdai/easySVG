@@ -12,7 +12,7 @@
 #' @param stroke.width a number, stroke width of the polyline line, default: 1
 #' @param stroke.opacity a number, stroke opacity of the polyline line, default:1. If the stroke opacity is 0, the polygon line is invisible
 #' @param style.sheet a vector or a chatacter, other style of the polyline, eg. "stroke-linecap: round"
-#' @return the characher type of svg element
+#' @return the characher type of SVG element
 #' @export
 #' @examples
 #' points <- matrix(c(1,2,3, 11,12,13), nrow = 3, ncol = 2)

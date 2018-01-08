@@ -25,8 +25,11 @@ group.content <- list(line, rect,
                       polygon, polyline,
                       text)
 group <- group.svg(id = "group_1", group.content = group.content)
-pack.svg(pack.content = group, output.svg.name = "a.svg")
 
+\dontrun{
+svg.name <- paste0(tempfile(),".svg")
+pack.svg(pack.content = group, output.svg.name = svg.name)
+}
 
 }
 \seealso{

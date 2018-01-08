@@ -11,7 +11,7 @@
 #' @param span a number, distance between number and axis line
 #' @param id a character, the id name of this axis
 #' @param unit the unit of this axis
-#' @return the characher type of svg element
+#' @return the characher type of SVG element
 #' @export
 #' @examples
 #' lim.axis.1 <- lim.axis.svg(x = c(100, 900), id = "test")
@@ -21,7 +21,7 @@
 #'
 #' lim.axis.2 <- lim.axis.svg(x = c(3.3, 4,5), id = "test", unit = 4000, axis.font.size = 4)
 #' pack_info_2 <- pack.svg(pack.content = lim.axis.2)
-#' # You can write it in a svg file
+#' # You can write it in a SVG file
 #' # message(pack_info_2)
 #'
 lim.axis.svg <- function(x = NULL,

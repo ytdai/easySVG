@@ -27,7 +27,7 @@ line.svg(x1 = NULL, y1 = NULL, x2 = NULL, y2 = NULL, stroke,
 \item{style.sheet}{a vector or a chatacter, other style of the line, eg. "stroke-linecap: round"}
 }
 \value{
-the characher type of svg element
+the characher type of SVG element
 }
 \description{
 This function will generate a line form SVG element.

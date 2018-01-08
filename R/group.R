@@ -29,7 +29,7 @@
 #' @param skewY a number
 #' @param style.sheet a vector or a chatacter, other style of the group, eg. "stroke-linecap: round"
 #' @param transform.sheet a vector or a chatacter, other transform of the group
-#' @return the characher type of svg element
+#' @return the characher type of SVG element
 #' @export
 #' @examples
 #' group.svg(id = "group_1", group.content = "this is a svg element")

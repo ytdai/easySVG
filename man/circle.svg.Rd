@@ -29,7 +29,7 @@ circle.svg(cx = NULL, cy = NULL, r = NULL, fill, fill.opacity, stroke,
 \item{style.sheet}{a vector or a chatacter, other style of the circle, eg. "stroke-linecap: round"}
 }
 \value{
-the characher type of svg element
+the characher type of SVG element
 }
 \description{
 This function can generate a circle form SVG element

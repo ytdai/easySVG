@@ -45,7 +45,7 @@ get.text.svg(x = NULL, y = NULL, text.content = "", fill, stroke,
 \item{style.sheet}{a vector or a chatacter, other style of the text, eg. "stroke-linecap: round"}
 }
 \value{
-the characher type of svg element
+the characher type of SVG element
 }
 \description{
 This function can generate a text form SVG element

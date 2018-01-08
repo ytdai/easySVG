@@ -22,7 +22,7 @@
 #' @param rotate a number, rotation angle of text
 #' @param text.path a character, fit text path
 #' @param style.sheet a vector or a chatacter, other style of the text, eg. "stroke-linecap: round"
-#' @return the characher type of svg element
+#' @return the characher type of SVG element
 #' @export
 #' @examples
 #' get.text.svg(x = 10, y = 20, text.content = "Hello Word", fill = "blue")

@@ -36,7 +36,7 @@ rect.svg(x = NULL, y = NULL, width = NULL, height = NULL, rx = NULL,
 \item{style.sheet}{a vector or a chatacter, other style of the rect, eg. "stroke-linecap: round"}
 }
 \value{
-the characher type of svg element
+the characher type of SVG element
 }
 \description{
 This function can generate a rect form SVG element

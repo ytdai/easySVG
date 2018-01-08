@@ -21,7 +21,7 @@ polyline.svg(points = NULL, fill, stroke, stroke.width, stroke.opacity,
 \item{style.sheet}{a vector or a chatacter, other style of the polyline, eg. "stroke-linecap: round"}
 }
 \value{
-the characher type of svg element
+the characher type of SVG element
 }
 \description{
 This function can generate a polyline form SVG element

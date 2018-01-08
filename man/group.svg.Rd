@@ -58,7 +58,7 @@ group.svg(id = NULL, group.content = NULL, fill, fill.opacity, stroke,
 \item{transform.sheet}{a vector or a chatacter, other transform of the group}
 }
 \value{
-the characher type of svg element
+the characher type of SVG element
 }
 \description{
 The <g> SVG element is a container used to group other SVG elements.
