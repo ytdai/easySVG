@@ -1,17 +1,18 @@
 
+# [![Build Status](https://travis-ci.org/ytdai/easySVG.svg)](https://travis-ci.org/ytdai/easySVG) [![CRAN](http://www.r-pkg.org/badges/version/easySVG)](https://cran.r-project.org/package=easySVG) [![Downloads](http://cranlogs.r-pkg.org/badges/easySVG?color=brightgreen)](http://www.r-pkg.org/pkg/easySVG)
 
 easySVG package
-==============
+===============
 
-The R package '[easySVG](https://github.com/ytdai/easySVG)' can generate SVG elements easily.
+> An Easy SVG Element Generator
 
-# Introduction 
+## Introduction 
 
 This package is an easy SVG elements generator. It can easily generate svg elements such as rect, line, circle, ellipse, polygon polyline, text and make group. Also, it can output svg elements into a svg file.
 
-# Installation
+## Installation
 
-## Github
+### Github
 
 ``` r
 # Install the cutting edge development version from GitHub:
