@@ -26,7 +26,7 @@ devtools::install_github("ytdai/easySVG")
 2. Unzip the file and change directories into the easySVG directory
 3. Run `R CMD INSTALL pkg`
 
-# Basic usage
+## Basic usage
 
 ``` r
 library(easySVG)
